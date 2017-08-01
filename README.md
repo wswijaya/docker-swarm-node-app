@@ -20,13 +20,15 @@ docker push <your docker id>/node-app-sample
 docker-machine create -d hyperv --hyperv-virtual-switch "myswitch" myvm3
 docker-machine create -d hyperv --hyperv-virtual-switch "myswitch" myvm2
 docker-machine create -d hyperv --hyperv-virtual-switch "myswitch" myvm3
+docker-machine create -d hyperv --hyperv-virtual-switch "myswitch" myvm4
 ```
 
-### 4. Create Docker Swarm and set VM1 and VM3 as manager
+### 4. Create Docker Swarm and set VM1, VM3, and VM4 as manager
 ```
 docker-machine ssh myvm1 "docker swarm init"
 docker-machine ssh myvm1 "docker swarm join-token manager"
 docker-machine ssh myvm3 "docker swarm join --token <token> <ip>:<port>"
+docker-machine ssh myvm4 "docker swarm join --token <token> <ip>:<port>"
 docker-machine ssh myvm1 "docker swarm join-token worker"
 docker-machine ssh myvm2 "docker swarm join --token <token> <ip>:<port>"
 ```
@@ -52,5 +54,6 @@ docker-machine ssh myvm1 "docker stack rm nodeapplab"
 docker-machine ssh myvm1 "docker stack rm nodeapplab"
 docker-machine ssh myvm2 "docker swarm leave"
 docker-machine ssh myvm3 "docker swarm leave --force"
+docker-machine ssh myvm4 "docker swarm leave --force"
 docker-machine ssh myvm1 "docker swarm leave --force"
 ```

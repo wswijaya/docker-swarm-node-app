@@ -1,7 +1,8 @@
 version: "3"
 services:
   web:
-    image: wswijaya/node-app-sample
+
+    image: <your docker user id>/node-app-sample
     deploy:
       replicas: 5
       resources:

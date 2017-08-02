@@ -42,7 +42,7 @@ docker-machine ssh myvm1 "docker stack ps nodeapplab"
 
 ### 6. Test Site
 * Node Web App: `http://<ip>:4000` or `http://<ip>:4000/api`
-* Docker Visualizer: http://ip:9090
+* Docker Visualizer: `http://<ip>:9090`
 
 ### 7. Remove Services
 ```

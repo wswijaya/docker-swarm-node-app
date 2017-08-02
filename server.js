@@ -6,10 +6,11 @@
 // call the packages we need
 var express    = require('express');        // call express
 var app        = express();                 // define our app using express
+var os 		   = require("os")
 var bodyParser = require('body-parser');
 
 app.get('/', (req, res) => {
-  res.send('Hello world\n');
+  res.send('Hello world from ' + os.hostname());
 });
 
 // configure app to use bodyParser()

@@ -57,3 +57,8 @@ docker-machine ssh myvm3 "docker swarm leave --force"
 docker-machine ssh myvm4 "docker swarm leave --force"
 docker-machine ssh myvm1 "docker swarm leave --force"
 ```
+
+### Optional: Configure Load Balancer using HAProxy
+Steps
+
+Sample config file

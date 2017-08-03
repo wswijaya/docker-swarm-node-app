@@ -4,6 +4,8 @@ Docker swarm sample with NodeJS app on Hyper-V
 ## <a name="prerequisites"></a>Prerequisites
 * This sample is using Hyper-V
 
+![Docker Swarm](images/2017-08-02_13-40-17.png)
+
 ### 1. Clone sample repository
 ```
 git clone https://github.com/wswijaya/docker-swarm-node-app.git
@@ -62,3 +64,4 @@ docker-machine ssh myvm1 "docker swarm leave --force"
 Steps
 
 Sample config file
+

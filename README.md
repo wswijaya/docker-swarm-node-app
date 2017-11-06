@@ -61,7 +61,25 @@ docker-machine ssh myvm1 "docker swarm leave --force"
 ```
 
 ### Optional: Configure Load Balancer using HAProxy
-Steps
 
-Sample config file
+Sample config file /etc/haproxy/haproxy.cfg
+```
+global
+      daemon
+      maxconn 200
 
+defaults
+      mode http
+      timeout connect 5000ms
+      timeout client 10000ms
+      timeout server 10000ms
+
+frontend  http-in
+      bind *:9090
+      default_backend servers
+
+backend servers
+      server vm1 <ip>:<port> maxconn 40
+      server vm3 <ip>:<port> maxconn 40
+      server vm4 <ip>:<port> maxconn 40
+```

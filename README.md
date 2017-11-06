@@ -62,6 +62,8 @@ docker-machine ssh myvm1 "docker swarm leave --force"
 
 ### Optional: Configure Load Balancer using HAProxy
 
+Installation steps for HAProxy on Ubuntu -> https://www.digitalocean.com/community/tutorials/how-to-use-haproxy-to-set-up-http-load-balancing-on-an-ubuntu-vps
+
 Sample config file /etc/haproxy/haproxy.cfg
 ```
 global
